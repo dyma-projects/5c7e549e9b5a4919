@@ -9,7 +9,9 @@ export class Exercice2Component implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
+  clickMe() {
+      console.log('You clicked me !');
+  }
 }

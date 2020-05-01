@@ -1,0 +1,12 @@
+<h2>Exercice 1</h2>
+<p>
+  Hello ! my name is {{me}} and you ?
+</p>
+<div>
+  <label for="answer"> You :
+    <input id="answer" name="answer" [value]="answer" (input)="answer=$event.target.value" />
+  </label>
+</div>
+<p>
+  Welcome {{answer}} !
+</p>
