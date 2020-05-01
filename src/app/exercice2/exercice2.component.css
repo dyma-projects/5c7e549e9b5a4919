@@ -1,5 +1,5 @@
-.square {
-  border: 1px solid red;
-  height: 100px;
-  width: 100px;
+p {
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
 }

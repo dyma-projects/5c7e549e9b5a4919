@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "project2-v6": {
+    "christophe-project": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,8 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
-            "outputPath": "dist/project2-v6",
+            "outputPath": "dist/christophe-project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -26,16 +25,11 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "es5BrowserSupport": true
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
-              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -50,25 +44,32 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "project2-v6:build"
+            "browserTarget": "christophe-project:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "project2-v6:build:production"
+              "browserTarget": "christophe-project:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "project2-v6:build"
+            "browserTarget": "christophe-project:build"
           }
         },
         "test": {
@@ -102,15 +103,21 @@
         }
       }
     },
-    "project2-v6-e2e": {
+    "christophe-project-e2e": {
       "root": "e2e/",
       "projectType": "application",
+      "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "project2-v6:serve"
+            "devServerTarget": "christophe-project:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "christophe-project:serve:production"
+            }
           }
         },
         "lint": {
@@ -125,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "project2-v6"
+  "defaultProject": "christophe-project"
 }
